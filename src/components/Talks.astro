@@ -1,0 +1,89 @@
+---
+import SecHead from './SecHead.astro';
+import Icon from './Icon.astro';
+import { loadTalks, loadSite } from '@lib/content';
+import { fetchYoutubeUploads } from '@lib/adapters/youtube';
+import type { Video } from '@lib/schemas/video';
+
+const talks = await loadTalks();
+const site = await loadSite();
+
+// Hybrid model: featured (manual), curated (manual), plus optional recent (YouTube auto-fetch).
+const recent: Video[] = await fetchYoutubeUploads({ limit: talks.data.autoFetchLimit });
+const f = talks.data.featured;
+---
+<section class="section wrap" id="talks">
+  <SecHead
+    eyebrow="Talks"
+    title="On stage, translating the technical."
+    link={{ label: 'View all 30+ on Sessionize', href: site.data.links.sessionize }}
+  />
+
+  <a
+    class="aw-card aw-card--glow spotlight reveal"
+    href={f.href}
+    target="_blank"
+    rel="noreferrer"
+    style="text-decoration: none; margin-top: 40px;"
+  >
+    <div class="spotlight__media">
+      <div class="glow"></div>
+      <div class="thumb">
+        <div class="play"><Icon name="play" size={26} /></div>
+        <span class="thumb__label">▶ Watch the keynote · YouTube</span>
+      </div>
+    </div>
+    <div class="spotlight__body">
+      <span class="aw-chip aw-chip--magenta" style="align-self: flex-start;">Featured keynote</span>
+      <span class="spotlight__meta">{f.event} · {f.year}</span>
+      <h3>{f.title}</h3>
+      <p>{f.desc}</p>
+    </div>
+  </a>
+
+  <div class="talkgrid">
+    {talks.data.curated.map((t, i) => (
+      <a
+        class="aw-card aw-card--glow talkcard reveal"
+        href={t.href}
+        target="_blank"
+        rel="noreferrer"
+        style={`text-decoration: none; transition-delay: ${i * 50}ms;`}
+      >
+        <div class="talkcard__thumb">
+          <div class="glow"></div>
+          <div class="play"><Icon name="play" size={18} /></div>
+        </div>
+        <div class="talkcard__body">
+          <span class="talkcard__ev">{t.event}<span class="yr">{t.year}</span></span>
+          <h4>{t.title}</h4>
+          <span class="talkcard__link"><Icon name="youtube" size={14} />Watch</span>
+        </div>
+      </a>
+    ))}
+  </div>
+
+  {recent.length > 0 && (
+    <div class="talkgrid" style="margin-top: 32px;">
+      <h3 style="grid-column: 1 / -1; margin: 0 0 8px;">Recent on YouTube</h3>
+      {recent.map((v) => (
+        <a
+          class="aw-card aw-card--glow talkcard reveal"
+          href={v.href}
+          target="_blank"
+          rel="noreferrer"
+          style="text-decoration: none;"
+        >
+          <div class="talkcard__thumb" style={`background-image: url(${v.thumbnail}); background-size: cover; background-position: center;`}>
+            <div class="glow"></div>
+            <div class="play"><Icon name="play" size={18} /></div>
+          </div>
+          <div class="talkcard__body">
+            <h4>{v.title}</h4>
+            <span class="talkcard__link"><Icon name="youtube" size={14} />Watch</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  )}
+</section>

@@ -1,0 +1,39 @@
+---
+import Btn from './Btn.astro';
+
+interface Props {
+  active?: string;
+  site: any;
+}
+const { active, site } = Astro.props;
+---
+<nav class="nav">
+  <div class="wrap nav__inner">
+    <a class="brand" href="/">
+      <img src="/assets/logo-monogram.svg" alt="" />
+      <b>alison&nbsp;haire<span class="dot">.</span></b>
+    </a>
+    <div class="nav__links" id="nav-links">
+      {site.pages.map(([label, href]: [string, string]) => (
+        <a class={`navlink${active === label ? ' active' : ''}`} href={href}>{label}</a>
+      ))}
+      <Btn kind="primary" href={site.links.calendly} icon="calendar-check" target="_blank">
+        Book a time
+      </Btn>
+    </div>
+    <button class="nav__burger" id="nav-burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<script is:inline>
+  // Minimal vanilla burger toggle (no React needed for nav).
+  document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.getElementById('nav-burger');
+    const links = document.getElementById('nav-links');
+    if (!burger || !links) return;
+    burger.addEventListener('click', () => links.classList.toggle('open'));
+    links.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => links.classList.remove('open')));
+  });
+</script>

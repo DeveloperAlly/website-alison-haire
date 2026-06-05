@@ -1,0 +1,78 @@
+---
+import SecHead from './SecHead.astro';
+import Icon from './Icon.astro';
+import Btn from './Btn.astro';
+import { loadSite } from '@lib/content';
+
+const site = await loadSite();
+const { links } = site.data;
+
+// LinkedIn highlights — static, content-editable in publications.json later if needed.
+const linkedinHighlights: Array<[string, string]> = [
+  ['Open-sourcing Lilypad', 'The full network is now public. Here is what we built and what I learned shipping deAI compute from zero.'],
+  ['Now advising',          'Taking on a small number of AI product and go-to-market advisory engagements. If you are turning research into product, let\'s talk.'],
+  ['arXiv, published',      'Our work on verifying non-deterministic GPU workloads on trustless networks is live. The thread.'],
+];
+---
+<section class="section wrap" id="social">
+  <SecHead
+    eyebrow="Follow along"
+    title="Latest, in real time."
+    lead="I think out loud on X and post the longer-form on LinkedIn. Come say hi."
+  />
+  <div class="social__grid" style="margin-top: 40px;">
+    <div class="aw-card aw-card--glow social__card">
+      <div class="social__head">
+        <span class="social__ic x"><Icon name="twitter" size={18} /></span>
+        <div>
+          <b>On X</b>
+          <span>@{links.xhandle}</span>
+        </div>
+        <a class="social__follow" href={links.x} target="_blank" rel="noreferrer">Follow</a>
+      </div>
+      <div class="social__feed" id="x-feed">
+        <a
+          class="twitter-timeline"
+          data-theme="dark"
+          data-chrome="noheader nofooter noborders transparent"
+          data-height="360"
+          data-tweet-limit="3"
+          href={`https://twitter.com/${links.xhandle}?ref_src=twsrc%5Etfw`}
+        >Posts by @{links.xhandle}</a>
+        <div class="social__fallback">
+          <p>
+            Live posts from <strong>@{links.xhandle}</strong> load here. Frontier AI, building in the open, and the occasional café-grade coffee take.
+          </p>
+          <Btn kind="ghost" href={links.x} target="_blank" icon="arrow-up-right">Open X</Btn>
+        </div>
+      </div>
+    </div>
+
+    <div class="aw-card aw-card--glow social__card">
+      <div class="social__head">
+        <span class="social__ic li"><Icon name="linkedin" size={18} /></span>
+        <div>
+          <b>On LinkedIn</b>
+          <span>in/ally-haire</span>
+        </div>
+        <a class="social__follow" href={links.linkedin} target="_blank" rel="noreferrer">Connect</a>
+      </div>
+      <div class="social__feed li__feed">
+        {linkedinHighlights.map(([t, d]) => (
+          <a class="li__post" href={links.linkedin} target="_blank" rel="noreferrer">
+            <span class="li__dot"></span>
+            <span>
+              <b>{t}</b>
+              <span class="li__txt">{d}</span>
+            </span>
+          </a>
+        ))}
+        <a class="social__more" href={links.linkedin} target="_blank" rel="noreferrer">
+          See more on LinkedIn<Icon name="arrow-up-right" size={14} />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline src="https://platform.twitter.com/widgets.js" async></script>

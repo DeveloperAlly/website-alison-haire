@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "name": "Lilypad Network",
+      "status": "oss",
+      "desc": "Distributed GPU compute network for AI: verifiable, trustless inference across thousands of nodes. Built from a single Filecoin smart contract to globally deployed, open-source infrastructure.",
+      "tags": ["Go", "Solidity", "FVM"],
+      "href": "https://github.com/Lilypad-Tech"
+    },
+    {
+      "name": "Waterlily.ai",
+      "status": "shipped",
+      "desc": "First AI-generated art platform paying on-chain royalties to artists. Built on FVM with Bacalhau and Stable Diffusion; covered by SiliconANGLE and featured by Filecoin Foundation.",
+      "tags": ["Next.js", "FEVM", "Stable Diffusion"],
+      "href": "#"
+    },
+    {
+      "name": "Olas Research Agent",
+      "status": "shipped",
+      "desc": "Live AI research-assistant agent on the Olas / Pearl marketplace. Full pipeline from design to production, accepted into the Olas Agent Accelerator.",
+      "tags": ["Agents", "Olas", "Python"],
+      "href": "#"
+    },
+    {
+      "name": "RAG / CAG Pipeline",
+      "status": "shipped",
+      "desc": "Retrieval (RAG) paired with a cached context bundle (CAG) for AI context management. The engine powering the assistant on this very site.",
+      "tags": ["RAG", "Embeddings", "n8n"],
+      "href": "#"
+    },
+    {
+      "name": "GPU Verification (arXiv)",
+      "status": "research",
+      "desc": "Co-authored peer-reviewed research proposing binary and ternary consensus frameworks for verifying non-deterministic GPU workloads on trustless networks.",
+      "tags": ["Research", "arXiv:2501.05374"],
+      "href": "https://arxiv.org/abs/2501.05374"
+    },
+    {
+      "name": "Lilypad v0 (FVM × Bacalhau)",
+      "status": "oss",
+      "desc": "The FVM-to-Bacalhau bridge relayer that became the technical origin of Lilypad: decentralised compute triggered directly from a smart contract.",
+      "tags": ["Solidity", "Bacalhau"],
+      "href": "#"
+    }
+  ]
+}

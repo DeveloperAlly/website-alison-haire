@@ -1,0 +1,57 @@
+---
+// Writing section: Ghost feed first, fallback posts second.
+// Build-time fetch — no client JS for the feed.
+import SecHead from './SecHead.astro';
+import { loadPublications, loadSite } from '@lib/content';
+import { fetchGhostPosts } from '@lib/adapters/ghost';
+import type { Post } from '@lib/schemas/post';
+
+const publications = await loadPublications();
+const site = await loadSite();
+
+const live = await fetchGhostPosts({ limit: 6 });
+const isLive = live.length > 0;
+const posts: Post[] = isLive
+  ? live
+  : (publications.data.fallbackPosts.map((p) => ({ ...p, source: 'manual' as const })) as Post[]);
+---
+<section class="section wrap" id="writing">
+  <SecHead
+    eyebrow="Writing"
+    title="Notes from the frontier."
+    link={{ label: 'Read more on the blog →', href: site.data.links.blog }}
+  />
+  <div class="ghost__status reveal">
+    <span class={`ghost__dot${isLive ? ' on' : ''}`}></span>
+    {isLive
+      ? 'Live from blog.alisonhaire.com'
+      : 'Showing recent posts · syncs from blog.alisonhaire.com (Ghost)'}
+  </div>
+  <div class="posts" style="margin-top: 24px;">
+    {posts.map((p, i) => (
+      <a
+        class="aw-card aw-card--glow post reveal"
+        href={p.href}
+        target="_blank"
+        rel="noreferrer"
+        style={`text-decoration: none; transition-delay: ${i * 50}ms;`}
+      >
+        {p.thumbnail && (
+          <div class="post__thumb" style={`background-image: url(${p.thumbnail}); background-size: cover; background-position: center;`}></div>
+        )}
+        <span class="post__tag">{p.tag}</span>
+        <h3>{p.title}</h3>
+        <p class="post__excerpt">{p.excerpt}</p>
+        <div class="post__foot">
+          <span>{p.date}</span>
+          {p.read && (
+            <>
+              <span class="dot"></span>
+              <span>{p.read} read</span>
+            </>
+          )}
+        </div>
+      </a>
+    ))}
+  </div>
+</section>

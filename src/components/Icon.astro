@@ -1,0 +1,17 @@
+---
+// Lucide icon placeholder. The actual SVG is swapped in by Lucide's UMD script
+// (loaded once in Layout.astro). Matches the design's `<i data-lucide="…">` pattern verbatim.
+interface Props {
+  name: string;
+  size?: number;
+  color?: string;
+  class?: string;
+}
+const { name, size = 20, color, class: className } = Astro.props;
+---
+<i
+  data-lucide={name}
+  class={className}
+  style={`width:${size}px;height:${size}px;${color ? `color:${color};` : ''}`}
+  aria-hidden="true"
+></i>

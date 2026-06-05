@@ -1,0 +1,14 @@
+{
+  "host": {
+    "show": "Tech Jam",
+    "title": "Co-host · IBM Developer's weekly show on cloud, AI and the build",
+    "date": "IBM era",
+    "href": "#"
+  },
+  "guest": [
+    { "show": "Developer DAO · DevNTell", "title": "Serverless distributed compute for AI (x2 episodes)", "date": "2024", "href": "#" },
+    { "show": "Crypto Hipster",           "title": "Decentralised AI and compute sovereignty", "date": "2024", "href": "#" },
+    { "show": "Proof of Talk",            "title": "Building open AI infrastructure", "date": "2024", "href": "#" },
+    { "show": "Females in Tech Show",     "title": "From café owner to AI founder", "date": "2023", "href": "#" }
+  ]
+}

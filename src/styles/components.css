@@ -1,0 +1,149 @@
+/* ============================================================================
+   Alison Haire — Components
+   components.css  ·  load AFTER colors_and_type.css
+
+   Cosmetic, reusable UI primitives. Class prefix: .aw-
+   ========================================================================== */
+
+/* ---- Buttons ------------------------------------------------------------- */
+.aw-btn {
+  --_bg: var(--aw-mint);
+  font-family: var(--aw-font-body);
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--aw-sp-2);
+  padding: 13px 22px;
+  border-radius: var(--aw-r-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none !important;
+  line-height: 1;
+  transition: transform var(--aw-dur-fast) var(--aw-ease),
+              box-shadow var(--aw-dur) var(--aw-ease),
+              background var(--aw-dur) var(--aw-ease);
+  white-space: nowrap;
+}
+/* Primary — mint fill on dark ink (doubled class beats .aw a color) */
+.aw-btn.aw-btn--primary {
+  background: var(--aw-mint);
+  color: #04201B;
+  font-weight: 700;
+  box-shadow: var(--aw-glow-mint);
+}
+.aw-btn--primary:hover { transform: translateY(-2px); box-shadow: 0 0 36px rgba(91,239,208,.6), 0 0 8px rgba(91,239,208,.7); }
+.aw-btn--primary:active { transform: translateY(0); background: var(--aw-mint-deep); }
+/* Ghost — hairline outline */
+.aw-btn.aw-btn--ghost {
+  background: transparent;
+  color: var(--aw-mint-bright);
+  border-color: var(--aw-mint-deep);
+}
+.aw-btn--ghost:hover { border-color: var(--aw-mint); background: var(--aw-fill-mint); }
+/* Magenta — for the rare high-energy CTA */
+.aw-btn.aw-btn--magenta {
+  background: var(--aw-magenta);
+  color: #2A0512;
+  font-weight: 700;
+  box-shadow: var(--aw-glow-magenta);
+}
+.aw-btn--magenta:hover { transform: translateY(-2px); }
+
+/* ---- Eyebrow with tick --------------------------------------------------- */
+.aw-eyebrow::before {
+  content: "";
+  width: 18px; height: 1px;
+  background: var(--aw-mint);
+  box-shadow: 0 0 8px var(--aw-mint);
+  display: inline-block;
+}
+
+/* ---- Cards --------------------------------------------------------------- */
+.aw-card {
+  background:
+    linear-gradient(180deg, rgba(17,42,45,.55), rgba(11,30,32,.55));
+  border: 1px solid var(--aw-hair);
+  border-radius: var(--aw-r-lg);
+  padding: var(--aw-sp-6);
+  position: relative;
+  transition: border-color var(--aw-dur) var(--aw-ease),
+              transform var(--aw-dur) var(--aw-ease),
+              box-shadow var(--aw-dur) var(--aw-ease);
+}
+.aw-card:hover {
+  border-color: var(--aw-hair-strong);
+  transform: translateY(-3px);
+  box-shadow: var(--aw-shadow-2), var(--aw-glow-soft);
+}
+/* Top hairline highlight for "glass edge" */
+.aw-card--glow::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(120deg, rgba(91,239,208,.5), rgba(255,80,121,.0) 40%, rgba(255,80,121,.4));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  opacity: .5; pointer-events: none;
+}
+
+/* ---- Badges / chips ------------------------------------------------------ */
+.aw-chip {
+  font-family: var(--aw-font-mono);
+  font-size: var(--aw-fs-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--aw-mint-bright);
+  background: var(--aw-fill-mint);
+  border: 1px solid var(--aw-hair);
+  border-radius: var(--aw-r-pill);
+  padding: 5px 12px;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.aw-chip--magenta { color: var(--aw-magenta-soft); background: var(--aw-fill-magenta); border-color: rgba(255,80,121,.22); }
+.aw-chip__dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; box-shadow: 0 0 8px currentColor; }
+
+/* ---- Inputs -------------------------------------------------------------- */
+.aw-input {
+  font-family: var(--aw-font-body);
+  font-size: var(--aw-fs-body);
+  color: var(--aw-ink-0);
+  background: rgba(5,13,14,.5);
+  border: 1px solid var(--aw-line);
+  border-radius: var(--aw-r-md);
+  padding: 12px 14px;
+  width: 100%;
+  transition: border-color var(--aw-dur) var(--aw-ease), box-shadow var(--aw-dur) var(--aw-ease);
+}
+.aw-input::placeholder { color: var(--aw-ink-3); }
+.aw-input:focus {
+  outline: none;
+  border-color: var(--aw-mint);
+  box-shadow: 0 0 0 3px var(--aw-fill-mint);
+}
+
+/* ---- Divider / hairline -------------------------------------------------- */
+.aw-rule { height: 1px; border: 0; background: var(--aw-line); }
+
+/* ---- Concentric-ring backdrop motif ------------------------------------- */
+.aw-rings {
+  position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;
+}
+.aw-rings::before, .aw-rings::after {
+  content: ""; position: absolute; border-radius: 50%;
+  border: 1px solid var(--aw-hair);
+}
+.aw-rings::before { width: 720px; height: 720px; }
+.aw-rings::after  { width: 1100px; height: 1100px; border-color: rgba(147,247,228,.06); }
+
+/* ---- Focus-visible accessibility ---------------------------------------- */
+.aw :focus-visible { outline: 2px solid var(--aw-mint); outline-offset: 3px; }
+
+/* ---- Reduced motion ------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .aw *, .aw *::before, .aw *::after { transition: none !important; animation: none !important; }
+}

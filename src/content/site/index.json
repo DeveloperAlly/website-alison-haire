@@ -1,0 +1,72 @@
+{
+  "seo": {
+    "title": "Alison Haire · AI Product Leader, Builder & Operator",
+    "description": "Alison Haire (Ally) — translating frontier AI into products, strategy and story. Founder of Lilypad; prev. Protocol Labs, IBM, Accenture.",
+    "ogImage": "/assets/alison-avatar.png"
+  },
+  "hero": {
+    "eyebrow": "AI Product Leader · Builder · Seasoned Operator",
+    "headlinePrefix": "Translating frontier AI into",
+    "headlineEmphasis": "products, strategy & story",
+    "lead": "Founder and product leader with 8+ years building AI infrastructure, from AIOps at Accenture to a distributed AI compute network running verifiable inference across thousands of GPU nodes worldwide. Published researcher in GPU verification. Founder of Lilypad; prev. Protocol Labs, IBM, Accenture.",
+    "ctaPrimary": { "label": "Book a time", "href": "https://calendly.com/alisonhaire/30min", "icon": "calendar-check" },
+    "ctaSecondary": { "label": "See the work", "href": "/projects", "icon": "arrow-right" }
+  },
+  "bio": {
+    "headline": "I take research-grade AI and turn it into things people can use, buy, and believe in.",
+    "paragraphs": [
+      "I live at the seam between research and reality. For eight-plus years I have taken the bleeding edge of AI and infrastructure and shipped it: most recently as founder and CEO of Lilypad, a decentralised GPU compute network for verifiable, trustless AI inference at scale.",
+      "I started by owning a café for seven years, taught myself to code, and went Accenture → IBM → Protocol Labs → Lilypad. That path taught me the hardest part of frontier technology is rarely the technology. It is the translation: scoping what is buildable now, shipping it reliably, and telling the story that makes engineers, executives and markets move together."
+    ]
+  },
+  "interests": {
+    "eyebrow": "Off the clock",
+    "headline": "The human stuff.",
+    "body": "I am endlessly curious about how minds, biological and artificial, actually work. When I am not shipping, I am reading sci-fi, thinking about robotics and the philosophy of AI, writing, and chasing a properly good cup of coffee. The café is where this whole thing started.",
+    "tags": [
+      ["bot", "Robotics"],
+      ["rocket", "Space"],
+      ["book-open", "Sci-fi"],
+      ["brain", "Neurodivergence"],
+      ["sparkles", "AI philosophy"],
+      ["pen-line", "Writing"],
+      ["coffee", "Coffee (7 years a café owner)"],
+      ["flask-conical", "DeSci"]
+    ]
+  },
+  "stats": [
+    ["8+", "Years building AI infra"],
+    ["1000s", "GPU nodes orchestrated"],
+    ["30+", "Conference talks"],
+    ["arXiv", "Published researcher"]
+  ],
+  "eras": [
+    { "name": "Accenture", "span": "2018" },
+    { "name": "IBM", "span": "2020" },
+    { "name": "Protocol Labs", "span": "2022" },
+    { "name": "Lilypad", "span": "2023" },
+    { "name": "Now", "span": "Advising", "now": true }
+  ],
+  "links": {
+    "blog": "https://blog.alisonhaire.com",
+    "linkedin": "https://www.linkedin.com/in/ally-haire",
+    "github": "https://github.com/DeveloperAlly",
+    "x": "https://x.com/DeveloperAlly",
+    "xhandle": "DeveloperAlly",
+    "bluesky": "https://bsky.app/profile/alisonwonderland.bsky.social",
+    "email": "contact@alisonhaire.com",
+    "sessionize": "https://sessionize.com/alison-haire",
+    "devto": "https://dev.to/developerally",
+    "blockworks": "https://blockworks.co/author/alison-haire",
+    "arxiv": "https://arxiv.org/abs/2501.05374",
+    "calendly": "https://calendly.com/alisonhaire/30min",
+    "resume": "/resume.pdf"
+  },
+  "pages": [
+    ["Experience", "/experience"],
+    ["Projects", "/projects"],
+    ["Speaking", "/speaking"],
+    ["Writing", "/writing"],
+    ["Contact", "/contact"]
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "roles": [
+    {
+      "when": "Nov 2025 – Present",
+      "where": "Self-employed",
+      "role": "AI Product Advisor & Independent Consultant",
+      "company": "Advisory",
+      "desc": "Independent AI strategy and product advisory for startups and enterprises building with AI infrastructure: product strategy, agent workflow design, and go-to-market."
+    },
+    {
+      "when": "Sep 2023 – Oct 2025",
+      "where": "Lilypad Network",
+      "role": "Founder & CEO",
+      "company": "deAI compute",
+      "desc": "Founded and shipped the privacy-preserving compute layer for AI agents: a three-sided GPU marketplace for verifiable, trustless inference at scale. Grew it from a single Filecoin smart-contract proof of concept to globally deployed, open-source infrastructure across thousands of active nodes. Launched IncentiveNet (Jun 2024), structured a Dell enterprise partnership, and open-sourced the full codebase."
+    },
+    {
+      "when": "Jan 2022 – Nov 2023",
+      "where": "Protocol Labs",
+      "role": "Product & PM, Developer Experience",
+      "company": "Filecoin Foundation",
+      "desc": "Led developer experience and go-to-market for the Filecoin Virtual Machine, one of the largest smart-contract platform launches in Web3. Assembled the DX team, owned the six-month pre-launch roadmap, ran the grants programme, and led the Space Warp hackathon (1,000+ hackers, 276 submissions)."
+    },
+    {
+      "when": "Nov 2019 – Mar 2022",
+      "where": "USyd × Air Force",
+      "role": "TPM & Senior Software Engineer",
+      "company": "Classified ML/IoT",
+      "desc": "Greenfield ML/IoT classified research project. Designed and built a distributed ML and IoT system for real-time AI analytics on mass incoming sensor data, owning architecture, security, DevOps and data pipeline simultaneously."
+    },
+    {
+      "when": "Apr 2020 – Jan 2022",
+      "where": "IBM",
+      "role": "Lead Developer Relations Engineer, ANZ",
+      "company": "Cloud · Watson · Blockchain",
+      "desc": "Led developer advocacy across ANZ for IBM Cloud, Kubernetes, Watson AI and blockchain. Built IBM Developer Meetups ANZ, co-organised the Call For Code hackathons, co-hosted the Tech Jam podcast, and ran client enablement across the APAC partner ecosystem."
+    },
+    {
+      "when": "Feb 2018 – Nov 2019",
+      "where": "Accenture",
+      "role": "Technical Architect & Software Engineer",
+      "company": "AIOps",
+      "desc": "Primary front-end engineer on Accenture's AIOps flagship product, delivering customised automated business solutions to global enterprise clients. Stack: React, Node, Express, MongoDB, Splunk, Docker, Jenkins CI/CD, AWS."
+    }
+  ],
+  "skills": [
+    ["AI & Compute",       ["Distributed inference", "Verifiable compute", "LLM orchestration", "Agent pipelines", "RAG / CAG", "Prompt engineering", "Stable Diffusion / SDXL", "Ollama", "Claude", "OpenAI", "n8n", "MCP"]],
+    ["Product & GTM",      ["0 to 1 product", "Product strategy", "Roadmapping", "Developer experience", "Go-to-market", "Launch sequencing", "Tokenomics design", "Marketplace design", "Open-source strategy"]],
+    ["Engineering",        ["Python", "TypeScript", "React.js", "Node.js", "Solidity / EVM", "Filecoin / IPFS", "Bacalhau", "Docker", "Kubernetes", "AWS", "GraphQL", "Smart contracts"]],
+    ["DevRel & Community", ["Developer activation", "Workshops", "Hackathon design", "Grants programmes", "Technical writing", "Conference speaking", "Community building", "Podcast hosting"]]
+  ],
+  "education": [
+    { "deg": "BE (Mechatronics) / BCompSci (Honours)", "school": "University of Wollongong", "years": "2012 – 2017", "note": "New Colombo Plan Scholarship, Robotics, China" },
+    { "deg": "BA, Philosophy, Politics & French",       "school": "Australian National University", "years": "1999 – 2001", "note": "French: Professional Working Proficiency" }
+  ],
+  "recognition": [
+    "arXiv Published Researcher (2025)",
+    "Olas Agent Accelerator (2025)",
+    "HackerNoon Top Story",
+    "Telstra Innovation Hackathon, 1st Runners Up & Smart Logistics Winner (2021)",
+    "iAccelerate Startup Founder (2017)",
+    "New Colombo Plan Scholar"
+  ]
+}

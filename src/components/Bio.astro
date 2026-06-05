@@ -1,0 +1,26 @@
+---
+import Icon from './Icon.astro';
+import { loadSite } from '@lib/content';
+
+const site = await loadSite();
+const { bio, eras } = site.data;
+---
+<section class="section wrap" id="about">
+  <div class="bio__grid reveal">
+    <h2 class="bio__headline">{bio.headline}</h2>
+    <div class="bio__body">
+      {bio.paragraphs.map((p: string) => <p>{p}</p>)}
+    </div>
+  </div>
+  <div class="eras reveal">
+    {eras.map((era: any, i: number) => (
+      <>
+        {i > 0 && <Icon name="arrow-right" size={18} color="var(--aw-mint)" />}
+        <div class={`era${era.now ? ' era--now' : ''}`}>
+          <b>{era.name}</b>
+          <span>{era.span}</span>
+        </div>
+      </>
+    ))}
+  </div>
+</section>

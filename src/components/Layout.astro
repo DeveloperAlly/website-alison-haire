@@ -1,0 +1,72 @@
+---
+// Base layout: head, fonts, design tokens, optional Ally assistant, Lucide hydration.
+// Active page label drives Nav highlight.
+import '@styles/colors_and_type.css';
+import '@styles/components.css';
+import '@styles/site.css';
+
+import { loadSite, loadAllyContext } from '@lib/content';
+import Nav from './Nav.astro';
+import Footer from './Footer.astro';
+import Ally from '@islands/Ally.tsx';
+
+interface Props {
+  title?: string;
+  description?: string;
+  active?: string;
+  showAlly?: boolean;
+}
+
+const site = await loadSite();
+const allyContext = await loadAllyContext();
+
+const {
+  title = site.data.seo.title,
+  description = site.data.seo.description,
+  active,
+  showAlly = true,
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {site.data.seo.ogImage && (
+      <>
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={site.data.seo.ogImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </>
+    )}
+    <link rel="icon" href="/assets/logo-monogram.svg" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).toString()} />
+  </head>
+  <body class="aw">
+    <Nav active={active} site={site.data} />
+    <main>
+      <slot />
+    </main>
+    <Footer site={site.data} />
+
+    {showAlly && (
+      <Ally
+        client:idle
+        contextMarkdown={allyContext.body}
+      />
+    )}
+
+    <!-- Lucide icons (UMD) — swaps every <i data-lucide="…"> into an SVG -->
+    <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js" is:inline></script>
+    <script is:inline>
+      if (window.lucide) window.lucide.createIcons();
+      // re-run on Astro view transitions (no-op for now, future-proofed)
+      document.addEventListener('astro:page-load', () => {
+        if (window.lucide) window.lucide.createIcons();
+      });
+    </script>
+  </body>
+</html>

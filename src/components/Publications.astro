@@ -1,0 +1,21 @@
+---
+import SecHead from './SecHead.astro';
+import Icon from './Icon.astro';
+import { loadPublications } from '@lib/content';
+
+const publications = await loadPublications();
+---
+<section class="section section--tight wrap" id="elsewhere">
+  <SecHead eyebrow="Also published" title="Elsewhere on the internet." />
+  <div class="homes" style="margin-top: 36px;">
+    {publications.data.outlets.map((o) => (
+      <a class="aw-card aw-card--glow home reveal" href={o.href} target="_blank" rel="noreferrer" style="text-decoration: none;">
+        <div>
+          <b>{o.name}</b>
+          <span>{o.note}</span>
+        </div>
+        <Icon name="arrow-up-right" size={18} />
+      </a>
+    ))}
+  </div>
+</section>

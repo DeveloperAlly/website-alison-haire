@@ -1,0 +1,15 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Alison Haire portal motif">
+  <defs>
+    <filter id="pg" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="1.4" result="b"></feGaussianBlur>
+      <feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+    </filter>
+  </defs>
+  <g fill="none" filter="url(#pg)" stroke-linecap="round">
+    <circle cx="50" cy="50" r="45" stroke="#5BEFD0" stroke-width="1.4" opacity="0.22"></circle>
+    <circle cx="50" cy="50" r="34.5" stroke="#5BEFD0" stroke-width="1.6" opacity="0.45"></circle>
+    <circle cx="50" cy="50" r="24" stroke="#93F7E4" stroke-width="2" opacity="0.9" stroke-dasharray="86 64" transform="rotate(-12 50 50)"></circle>
+    <circle cx="50" cy="50" r="9" fill="#5BEFD0" stroke="none"></circle>
+    <circle cx="50" cy="5" r="3.4" fill="#FF5079" stroke="none"></circle>
+  </g>
+</svg>

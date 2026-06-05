@@ -1,0 +1,78 @@
+---
+import SecHead from './SecHead.astro';
+import Icon from './Icon.astro';
+import { loadExperience, loadSite } from '@lib/content';
+
+const exp = await loadExperience();
+const site = await loadSite();
+const { roles, skills, education, recognition } = exp.data;
+---
+<section class="section wrap" id="experience">
+  <SecHead
+    eyebrow="Experience"
+    title="The actual track record."
+    link={{ label: 'Full history on LinkedIn', href: site.data.links.linkedin }}
+  />
+  <div class="xp reveal" style="margin-top: 36px;">
+    {roles.map((x) => (
+      <div class="xp__row">
+        <div class="xp__when">
+          <b>{x.where}</b>
+          {x.when}
+        </div>
+        <div class="xp__role">
+          <h4>{x.role} <em>· {x.company}</em></h4>
+          <p>{x.desc}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<section class="section section--tight wrap" id="skills">
+  <SecHead eyebrow="Capabilities" title="What I actually do." />
+  <div class="skills" style="margin-top: 40px;">
+    {skills.map(([group, items]) => (
+      <div class="aw-card aw-card--glow skillcard reveal">
+        <h4>{group}</h4>
+        <div class="skillcard__tags">
+          {items.map((s) => <span class="tag">{s}</span>)}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<section class="section section--tight wrap" id="education">
+  <div class="edugrid">
+    <div class="edu reveal">
+      <div class="subhead">Education</div>
+      {education.map((e) => (
+        <div class="edu__row">
+          <div class="edu__when">{e.years}</div>
+          <div>
+            <h4>{e.deg}</h4>
+            <span class="edu__school">{e.school}</span>
+            {e.note && <p class="edu__note">{e.note}</p>}
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="recog reveal">
+      <div class="subhead">Recognition</div>
+      <ul class="recog__list">
+        {recognition.map((r) => (
+          <li><Icon name="sparkles" size={15} />{r}</li>
+        ))}
+      </ul>
+      <a class="recog__paper" href={site.data.links.arxiv} target="_blank" rel="noreferrer">
+        <Icon name="file-text" size={18} />
+        <span>
+          <b>arXiv:2501.05374</b>
+          <span class="recog__sub">Validation of GPU Computation in Decentralized, Trustless Networks</span>
+        </span>
+        <Icon name="arrow-up-right" size={16} />
+      </a>
+    </div>
+  </div>
+</section>

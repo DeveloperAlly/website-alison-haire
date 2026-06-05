@@ -1,0 +1,18 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  kind?: 'primary' | 'ghost';
+  href?: string;
+  icon?: string;
+  target?: string;
+}
+const { kind = 'primary', href = '#', icon, target } = Astro.props;
+const isExternal = target === '_blank' || (href.startsWith('http') && !href.includes('alisonhaire.com'));
+const rel = isExternal ? 'noreferrer' : undefined;
+const finalTarget = isExternal ? '_blank' : target;
+---
+<a class={`aw-btn aw-btn--${kind}`} href={href} target={finalTarget} rel={rel}>
+  <slot />
+  {icon && <Icon name={icon} size={16} />}
+</a>

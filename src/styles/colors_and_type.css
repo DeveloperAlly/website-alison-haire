@@ -1,0 +1,174 @@
+/* ============================================================================
+   Alison Haire — Core Design Tokens
+   colors_and_type.css
+
+   A neon-on-dark, nature-meets-cyberpunk system. Palette + mood are derived
+   from the Lilypad brand kit (Alison's prior company): deep teal-charcoal base,
+   electric mint-cyan primary, hot-magenta accent, faint concentric-ring motifs.
+
+   FONT SUBSTITUTION NOTE
+   Lilypad's wordmark used a heavy custom/geometric face we don't have a file
+   for. We substitute Google Fonts that capture the same techy-geometric mood:
+     - Space Grotesk  -> display / wordmark / headings
+     - Hanken Grotesk -> body / UI
+     - Space Mono     -> eyebrows, labels, code, "terminal" accents
+   Swap these out if/when the real brand fonts are provided.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  /* ---- Brand palette ------------------------------------------------------ */
+  /* Base (deep teal-charcoal) */
+  --aw-void:      #050D0E;   /* deepest background, page edge */
+  --aw-abyss:     #081618;   /* base background */
+  --aw-deep:      #0B1E20;   /* panel / card */
+  --aw-raised:    #112A2D;   /* raised surface, hover */
+  --aw-line:      #1B383B;   /* solid hairline on dark */
+
+  /* Mint-cyan (primary) */
+  --aw-mint:      #5BEFD0;   /* primary */
+  --aw-mint-bright:#93F7E4;  /* bright text / wordmark */
+  --aw-mint-deep: #1FA98C;   /* pressed / deeper fills */
+
+  /* Pink (accent) — real Lilypad pink */
+  --aw-magenta:   #FF5079;   /* accent (kept var name for back-compat) */
+  --aw-pink:      #FF5079;   /* alias */
+  --aw-magenta-soft:#FF85A3; /* internal tint only — not a brand swatch */
+
+  /* Green (support) — real Lilypad green */
+  --aw-green:     #57D092;
+  --aw-teal:      #14C7C3;   /* real Lilypad secondary teal */
+  --aw-cyan:      #57D092;   /* back-compat alias → now green (no bright cyan) */
+  --aw-violet:    #57D092;   /* back-compat alias → green (purple removed) */
+
+  /* Ink / text */
+  --aw-ink-0:     #ECFBF6;   /* primary text */
+  --aw-ink-1:     #B6D0CC;   /* secondary text */
+  --aw-ink-2:     #7C9794;   /* muted / captions */
+  --aw-ink-3:     #51706D;   /* faint / disabled */
+
+  /* Translucent lines & fills (for layering on imagery) */
+  --aw-hair:        rgba(147, 247, 228, 0.14);
+  --aw-hair-strong: rgba(147, 247, 228, 0.30);
+  --aw-fill-mint:   rgba(91, 239, 208, 0.10);
+  --aw-fill-magenta:rgba(255, 80, 121, 0.13);
+  --aw-fill-green:  rgba(87, 208, 146, 0.12);
+  --aw-scrim:       rgba(5, 13, 14, 0.66);
+
+  /* ---- Signature gradients ----------------------------------------------- */
+  --aw-grad-aurora: linear-gradient(110deg, #FF5079 0%, #FF7CA0 60%, #FFB0C8 100%);
+  --aw-grad-portal: radial-gradient(circle at 50% 50%, rgba(91,239,208,.32) 0%, rgba(255,80,121,.12) 42%, rgba(8,22,24,0) 70%);
+  --aw-grad-page:   radial-gradient(120% 90% at 50% -10%, #0E2629 0%, #081618 46%, #050D0E 100%);
+
+  /* ---- Neon glows & elevation -------------------------------------------- */
+  --aw-glow-mint:    0 0 28px rgba(91,239,208,.40), 0 0 6px rgba(91,239,208,.55);
+  --aw-glow-magenta: 0 0 28px rgba(255,80,121,.42), 0 0 6px rgba(255,80,121,.55);
+  --aw-glow-soft:    0 0 60px rgba(91,239,208,.18);
+  --aw-shadow-1:     0 2px 8px rgba(0,0,0,.40);
+  --aw-shadow-2:     0 18px 48px rgba(0,0,0,.55);
+
+  /* ---- Type families ------------------------------------------------------ */
+  --aw-font-display: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+  --aw-font-body:    'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+  --aw-font-mono:    'Space Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ---- Type scale (fluid-ish, rem) ---------------------------------------- */
+  --aw-fs-display: clamp(3.5rem, 7vw, 6rem);   /* hero */
+  --aw-fs-h1:      clamp(2.5rem, 4.5vw, 3.75rem);
+  --aw-fs-h2:      clamp(2rem, 3.2vw, 2.75rem);
+  --aw-fs-h3:      1.5rem;
+  --aw-fs-h4:      1.25rem;
+  --aw-fs-body-lg: 1.125rem;
+  --aw-fs-body:    1rem;
+  --aw-fs-sm:      0.875rem;
+  --aw-fs-xs:      0.75rem;
+
+  --aw-lh-tight:   1.04;
+  --aw-lh-snug:    1.18;
+  --aw-lh-body:    1.6;
+
+  /* tracking */
+  --aw-track-eyebrow: 0.22em;
+  --aw-track-display: -0.02em;
+
+  /* ---- Spacing (4px base) ------------------------------------------------- */
+  --aw-sp-1: 4px;  --aw-sp-2: 8px;  --aw-sp-3: 12px; --aw-sp-4: 16px;
+  --aw-sp-5: 24px; --aw-sp-6: 32px; --aw-sp-7: 48px; --aw-sp-8: 64px;
+  --aw-sp-9: 96px; --aw-sp-10: 128px;
+
+  /* ---- Radii -------------------------------------------------------------- */
+  --aw-r-sm: 6px; --aw-r-md: 10px; --aw-r-lg: 16px; --aw-r-xl: 24px; --aw-r-pill: 999px;
+
+  /* ---- Motion ------------------------------------------------------------- */
+  --aw-ease: cubic-bezier(0.22, 1, 0.36, 1);   /* gentle, premium ease-out */
+  --aw-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --aw-dur-fast: 140ms;
+  --aw-dur: 280ms;
+  --aw-dur-slow: 520ms;
+}
+
+/* ============================================================================
+   SEMANTIC ELEMENT STYLES
+   Opt in by adding class="aw" to a container, or use the tokens directly.
+   ========================================================================== */
+.aw {
+  background: var(--aw-grad-page);
+  color: var(--aw-ink-1);
+  font-family: var(--aw-font-body);
+  font-size: var(--aw-fs-body);
+  line-height: var(--aw-lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.aw h1, .aw h2, .aw h3, .aw h4 {
+  font-family: var(--aw-font-display);
+  color: var(--aw-ink-0);
+  line-height: var(--aw-lh-tight);
+  letter-spacing: var(--aw-track-display);
+  font-weight: 600;
+  margin: 0 0 0.4em;
+  text-wrap: balance;
+}
+.aw h1 { font-size: var(--aw-fs-h1); }
+.aw h2 { font-size: var(--aw-fs-h2); }
+.aw h3 { font-size: var(--aw-fs-h3); line-height: var(--aw-lh-snug); }
+.aw h4 { font-size: var(--aw-fs-h4); line-height: var(--aw-lh-snug); }
+
+.aw p { margin: 0 0 1em; max-width: 64ch; text-wrap: pretty; }
+.aw a { color: var(--aw-mint-bright); text-decoration: none; }
+.aw a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.aw strong { color: var(--aw-ink-0); font-weight: 700; }
+
+/* Eyebrow / kicker — the signature mono, tracked, uppercase label */
+.aw-eyebrow {
+  font-family: var(--aw-font-mono);
+  font-size: var(--aw-fs-xs);
+  letter-spacing: var(--aw-track-eyebrow);
+  text-transform: uppercase;
+  color: var(--aw-mint);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--aw-sp-2);
+}
+
+/* Gradient/mint display text */
+.aw-display {
+  font-family: var(--aw-font-display);
+  font-weight: 700;
+  font-size: var(--aw-fs-display);
+  line-height: var(--aw-lh-tight);
+  letter-spacing: var(--aw-track-display);
+  color: var(--aw-ink-0);
+}
+/* Emphasis display text — solid pink (no gradient) */
+.aw-grad-text {
+  color: var(--aw-magenta);
+}
+
+.aw code, .aw-mono {
+  font-family: var(--aw-font-mono);
+  font-size: 0.92em;
+  color: var(--aw-mint-bright);
+}

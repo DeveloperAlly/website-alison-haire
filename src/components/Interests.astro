@@ -1,0 +1,22 @@
+---
+import Eyebrow from './Eyebrow.astro';
+import Icon from './Icon.astro';
+import { loadSite } from '@lib/content';
+
+const site = await loadSite();
+const { interests } = site.data;
+---
+<section class="section section--tight wrap" id="interests">
+  <div class="interests__grid">
+    <div class="interests__copy reveal">
+      <Eyebrow magenta>{interests.eyebrow}</Eyebrow>
+      <h2 style="margin-top: 10px;">{interests.headline}</h2>
+      <p>{interests.body}</p>
+    </div>
+    <div class="tagcloud reveal">
+      {interests.tags.map(([ic, label]: [string, string]) => (
+        <span class="itag"><Icon name={ic} size={17} />{label}</span>
+      ))}
+    </div>
+  </div>
+</section>

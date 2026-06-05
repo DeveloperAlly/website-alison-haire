@@ -1,0 +1,19 @@
+{
+  "featured": {
+    "event": "Keynote · ETH Devconnect Istanbul",
+    "title": "Baklava Calibration Testnet: launching a live network on stage",
+    "year": "2023",
+    "desc": "The solo mainstage keynote, launching the Lilypad testnet live during the talk. Translating deeply technical distributed-compute architecture into a narrative for a developer and institutional audience.",
+    "href": "https://www.youtube.com/@DeveloperAlly",
+    "youtubeId": ""
+  },
+  "curated": [
+    { "event": "SmartCon (Chainlink)", "year": "2024", "title": "Lilypad architecture and deAI infrastructure", "href": "https://www.youtube.com/@DeveloperAlly" },
+    { "event": "ETH_AI Day",            "year": "2024", "title": "Distributed AI compute and verifiable inference", "href": "https://www.youtube.com/@DeveloperAlly" },
+    { "event": "DeSci London",          "year": "2024", "title": "Decentralised science and AI compute", "href": "https://www.youtube.com/@DeveloperAlly" },
+    { "event": "IPFS Camp",             "year": "2023", "title": "Decentralised compute and FVM integration", "href": "https://www.youtube.com/@DeveloperAlly" },
+    { "event": "ETHGlobal Workshop",    "year": "2023", "title": "AI Art NFTs on FEVM with Bacalhau + SDXL", "href": "https://www.youtube.com/@DeveloperAlly" },
+    { "event": "APIdays Jakarta",       "year": "2021", "title": "Cloud Native and OpenShift", "href": "https://www.youtube.com/@DeveloperAlly" }
+  ],
+  "autoFetchLimit": 8
+}

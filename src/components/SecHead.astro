@@ -1,0 +1,26 @@
+---
+import Eyebrow from './Eyebrow.astro';
+import Icon from './Icon.astro';
+
+interface Props {
+  eyebrow: string;
+  magenta?: boolean;
+  title: string;
+  lead?: string;
+  link?: { label: string; href: string };
+}
+const { eyebrow, magenta, title, lead, link } = Astro.props;
+---
+<div class="sechead reveal">
+  <div>
+    <Eyebrow magenta={magenta}>{eyebrow}</Eyebrow>
+    <h2>{title}</h2>
+  </div>
+  {link ? (
+    <a class="seclink" href={link.href} target="_blank" rel="noreferrer">
+      {link.label}<Icon name="arrow-up-right" size={15} />
+    </a>
+  ) : lead ? (
+    <p>{lead}</p>
+  ) : null}
+</div>

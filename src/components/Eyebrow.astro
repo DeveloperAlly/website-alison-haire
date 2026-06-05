@@ -1,0 +1,9 @@
+---
+interface Props {
+  magenta?: boolean;
+}
+const { magenta } = Astro.props;
+---
+<span class="aw-eyebrow" style={magenta ? 'color: var(--aw-magenta-soft);' : undefined}>
+  <slot />
+</span>

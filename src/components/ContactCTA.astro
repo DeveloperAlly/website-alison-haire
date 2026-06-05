@@ -1,0 +1,23 @@
+---
+import Eyebrow from './Eyebrow.astro';
+import Btn from './Btn.astro';
+import Rings from './Rings.astro';
+import { loadSite } from '@lib/content';
+
+const site = await loadSite();
+const { links } = site.data;
+---
+<section class="section wrap">
+  <div class="aw-card aw-card--glow cta reveal">
+    <Rings style="opacity: .5;" />
+    <div class="cta__inner">
+      <Eyebrow>Let's build something</Eyebrow>
+      <h2>Have a frontier problem worth shipping?</h2>
+      <p>Advising, fractional product leadership, or just trading notes on where AI is going. The door is open.</p>
+      <div class="cta__btns">
+        <Btn kind="primary" href={links.calendly} icon="calendar-check" target="_blank">Book 30 mins</Btn>
+        <Btn kind="ghost" href="/contact" icon="arrow-right">Contact</Btn>
+      </div>
+    </div>
+  </div>
+</section>

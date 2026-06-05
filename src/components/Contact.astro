@@ -1,0 +1,66 @@
+---
+import SecHead from './SecHead.astro';
+import Icon from './Icon.astro';
+import Btn from './Btn.astro';
+import { loadSite } from '@lib/content';
+
+const site = await loadSite();
+const { links } = site.data;
+---
+<section class="section wrap contact" id="contact">
+  <SecHead eyebrow="Contact" title="Have a frontier problem worth shipping?" />
+  <div class="contact__grid" style="margin-top: 36px;">
+    <div class="contact__left reveal">
+      <p>
+        I am open to <strong>advising</strong>, <strong>fractional product leadership</strong>, and just trading
+        notes on where AI is going. If you are turning research into something real, or trying to, the door is open.
+      </p>
+      <div class="contact__rows">
+        <a href={`mailto:${links.email}`}>
+          <span class="ic"><Icon name="mail" size={18} /></span>
+          <span>Email<span class="sub">{links.email}</span></span>
+          <Icon name="arrow-up-right" size={16} />
+        </a>
+        <a href={links.linkedin} target="_blank" rel="noreferrer">
+          <span class="ic"><Icon name="linkedin" size={18} /></span>
+          <span>LinkedIn<span class="sub">in/ally-haire</span></span>
+          <Icon name="arrow-up-right" size={16} />
+        </a>
+        <a href={links.github} target="_blank" rel="noreferrer">
+          <span class="ic"><Icon name="github" size={18} /></span>
+          <span>GitHub<span class="sub">github.com/DeveloperAlly</span></span>
+          <Icon name="arrow-up-right" size={16} />
+        </a>
+        <a href={links.x} target="_blank" rel="noreferrer">
+          <span class="ic"><Icon name="twitter" size={18} /></span>
+          <span>X<span class="sub">@{links.xhandle}</span></span>
+          <Icon name="arrow-up-right" size={16} />
+        </a>
+        <a href={links.resume} target="_blank" rel="noreferrer">
+          <span class="ic"><Icon name="file-text" size={18} /></span>
+          <span>Download CV<span class="sub">PDF · One-pager</span></span>
+          <Icon name="arrow-up-right" size={16} />
+        </a>
+      </div>
+    </div>
+
+    <div class="aw-card aw-card--glow cal reveal">
+      <div class="cal__head">
+        <img class="ava" src="/assets/alison-avatar.png" alt="Alison Haire" />
+        <div>
+          <span>Book 30 mins</span>
+          <b>Intro call with Alison</b>
+        </div>
+        <span class="dur"><Icon name="clock" size={14} />30 min</span>
+      </div>
+      <div class="cal__body" style="padding: 32px; text-align: center;">
+        <p style="margin-bottom: 24px;">
+          Pick a time that works for you on Calendly. I will see you there.
+        </p>
+        <Btn kind="primary" href={links.calendly} icon="calendar-check" target="_blank">
+          Open Calendly
+        </Btn>
+      </div>
+    </div>
+  </div>
+</section>

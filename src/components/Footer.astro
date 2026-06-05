@@ -1,0 +1,23 @@
+---
+interface Props {
+  site: any;
+}
+const { site } = Astro.props;
+const year = new Date().getFullYear();
+---
+<footer class="foot">
+  <div class="wrap foot__row">
+    <a class="brand" href="/">
+      <img src="/assets/logo-monogram.svg" alt="" />
+      <b>alison&nbsp;haire<span class="dot">.</span></b>
+    </a>
+    <div class="foot__social">
+      <a href={site.links.x} target="_blank" rel="noreferrer">X / @{site.links.xhandle}</a>
+      <a href={site.links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href={site.links.github} target="_blank" rel="noreferrer">GitHub</a>
+      <a href={site.links.blog} target="_blank" rel="noreferrer">Blog</a>
+      <a href={site.links.resume} target="_blank" rel="noreferrer">Resume</a>
+    </div>
+    <small>© {year} Alison Haire · The frontier, shipped. ✦</small>
+  </div>
+</footer>

@@ -1,0 +1,38 @@
+---
+import SecHead from './SecHead.astro';
+import Icon from './Icon.astro';
+import { loadPodcasts } from '@lib/content';
+
+const podcasts = await loadPodcasts();
+const { host, guest } = podcasts.data;
+---
+<section class="section section--tight wrap" id="podcasts">
+  <SecHead eyebrow="Podcasts" title="On the mic." />
+  <div class="pods" style="margin-top: 40px;">
+    <div class="aw-card aw-card--glow pod pod--host reveal">
+      <div class="pod__top">
+        <div class="pod__icon"><Icon name="mic" size={18} /></div>
+        <span class="aw-chip aw-chip--magenta">Co-host</span>
+      </div>
+      <span class="pod__show">{host.show}</span>
+      <h4>{host.title}</h4>
+      <span class="pod__date">{host.date}</span>
+      <a class="pod__listen" href={host.href} target="_blank" rel="noreferrer">
+        <Icon name="headphones" size={14} />Listen
+      </a>
+    </div>
+    {guest.map((p, i) => (
+      <div class="aw-card aw-card--glow pod reveal" style={`transition-delay: ${i * 50}ms;`}>
+        <div class="pod__top">
+          <div class="pod__icon"><Icon name="mic" size={18} /></div>
+        </div>
+        <span class="pod__show">{p.show}</span>
+        <h4>{p.title}</h4>
+        <span class="pod__date">{p.date}</span>
+        <a class="pod__listen" href={p.href} target="_blank" rel="noreferrer">
+          <Icon name="headphones" size={14} />Listen
+        </a>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,54 @@
+---
+import Eyebrow from './Eyebrow.astro';
+import Btn from './Btn.astro';
+import Icon from './Icon.astro';
+import Rings from './Rings.astro';
+import { loadSite } from '@lib/content';
+
+const site = await loadSite();
+const { hero, stats, links } = site.data;
+---
+<header class="hero wrap" id="top">
+  <Rings style="left: -30%; top: -40%; opacity: .6;" />
+  <div class="hero__grid">
+    <div>
+      <Eyebrow>{hero.eyebrow}</Eyebrow>
+      <h1>
+        {hero.headlinePrefix}
+        <span class="aw-grad-text">{hero.headlineEmphasis}</span>.
+      </h1>
+      <p class="hero__lead">{hero.lead}</p>
+      <div class="hero__cta">
+        <Btn kind="primary" href={hero.ctaPrimary.href} icon={hero.ctaPrimary.icon} target="_blank">
+          {hero.ctaPrimary.label}
+        </Btn>
+        <Btn kind="ghost" href={hero.ctaSecondary.href} icon={hero.ctaSecondary.icon}>
+          {hero.ctaSecondary.label}
+        </Btn>
+      </div>
+      <div class="hero__links">
+        <a href={links.blog} target="_blank" rel="noreferrer"><Icon name="pen-line" size={15} />Blog</a>
+        <a href={links.linkedin} target="_blank" rel="noreferrer"><Icon name="linkedin" size={15} />LinkedIn</a>
+        <a href={links.github} target="_blank" rel="noreferrer"><Icon name="github" size={15} />GitHub</a>
+        <a href={links.x} target="_blank" rel="noreferrer"><Icon name="twitter" size={15} />X</a>
+        <a href={`mailto:${links.email}`}><Icon name="mail" size={15} />Email</a>
+      </div>
+    </div>
+    <div class="hero__portrait">
+      <div class="orbit2"></div>
+      <div class="orbit"></div>
+      <div class="frame">
+        <img class="ava" src="/assets/alison-avatar.png" alt="Alison Haire" />
+        <img class="moth" src="/assets/logo-portal.svg" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="stats">
+    {stats.map(([n, l]: [string, string]) => (
+      <div class="stat reveal">
+        <b>{n}</b>
+        <span>{l}</span>
+      </div>
+    ))}
+  </div>
+</header>

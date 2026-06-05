@@ -1,0 +1,16 @@
+{
+  "outlets": [
+    { "name": "Blockworks",  "note": "Op-eds on decentralised AI",          "href": "https://blockworks.co/author/alison-haire" },
+    { "name": "HackerNoon",  "note": "Top Story author",                    "href": "https://hackernoon.com/u/developerally" },
+    { "name": "Dev.to",      "note": "Trusted Member · 9 posts",            "href": "https://dev.to/developerally" },
+    { "name": "Hashnode",    "note": "34 posts across 3 publications",      "href": "https://hashnode.com/@DeveloperAlly" }
+  ],
+  "fallbackPosts": [
+    { "tag": "Op-ed",    "title": "A small group of tech giants are holding AI's future hostage", "excerpt": "The case for decentralised compute as an AI governance imperative. Originally for Blockworks.", "date": "Sep 2024", "read": "7 min",  "href": "https://blockworks.co/author/alison-haire" },
+    { "tag": "Tutorial", "title": "Building an AI Art NFT DApp on FEVM",                          "excerpt": "A full walkthrough of generative art, on-chain royalties and decentralised compute. HackerNoon Top Story.", "date": "2023",     "read": "12 min", "href": "https://blog.alisonhaire.com" },
+    { "tag": "Essay",    "title": "Why I left FVM DevRel",                                        "excerpt": "An honest reflection on developer relations, burnout, and choosing to build the thing instead of evangelising it.", "date": "2023",     "read": "9 min",  "href": "https://dev.to/developerally" },
+    { "tag": "Analysis", "title": "Is web3 business just web2 in disguise?",                      "excerpt": "Cutting through the narrative to ask what is genuinely new about decentralised business models, and what is not.", "date": "2022",     "read": "8 min",  "href": "https://dev.to/developerally" },
+    { "tag": "Essay",    "title": "Unique challenges for women in crypto",                       "excerpt": "What I have learned building and speaking in a space that still has a long way to go on inclusion.", "date": "2022",     "read": "6 min",  "href": "https://dev.to/developerally" },
+    { "tag": "Analysis", "title": "The decentralised AI landscape, and why deAI will win",       "excerpt": "Mapping the deAI stack, the players, and the structural reasons open compute beats closed in the long run.", "date": "2024",     "read": "11 min", "href": "https://blog.alisonhaire.com" }
+  ]
+}

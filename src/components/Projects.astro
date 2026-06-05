@@ -1,0 +1,45 @@
+---
+import SecHead from './SecHead.astro';
+import Icon from './Icon.astro';
+import { loadProjects } from '@lib/content';
+
+const STATUS: Record<string, [string, string]> = {
+  shipped:  ['badge--shipped',  'Shipped'],
+  oss:      ['badge--oss',      'Open source'],
+  research: ['badge--research', 'Published'],
+  wip:      ['badge--wip',      'In progress'],
+};
+
+const projects = await loadProjects();
+---
+<section class="section wrap" id="projects">
+  <SecHead
+    eyebrow="Projects"
+    title="From protocol to product."
+    lead="Things I have built or co-authored. Each one started at the frontier and ended in something real."
+  />
+  <div class="projects" style="margin-top: 40px;">
+    {projects.data.items.map((p, i) => {
+      const [cls, label] = STATUS[p.status];
+      return (
+        <a
+          class="aw-card aw-card--glow proj reveal"
+          href={p.href}
+          target="_blank"
+          rel="noreferrer"
+          style={`text-decoration: none; transition-delay: ${i * 50}ms;`}
+        >
+          <div class="proj__top">
+            <span class={`badge ${cls}`}><span class="badge__dot"></span>{label}</span>
+            <Icon name="arrow-up-right" size={18} />
+          </div>
+          <h3>{p.name}</h3>
+          <p class="proj__desc">{p.desc}</p>
+          <div class="proj__tags">
+            {p.tags.map((t) => <span class="tag">{t}</span>)}
+          </div>
+        </a>
+      );
+    })}
+  </div>
+</section>

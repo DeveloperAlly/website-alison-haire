@@ -1,0 +1,40 @@
+{
+  "name": "website-alison-haire",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal site & content hub for Alison Haire. Astro + React islands, deployed on Cloudflare Pages.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check",
+    "format": "prettier --write \"src/**/*.{ts,tsx,astro,md,mdx,json,css}\""
+  },
+  "engines": {
+    "node": ">=20.3.0"
+  },
+  "packageManager": "pnpm@9.4.0",
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/cloudflare": "^12.2.0",
+    "@astrojs/mdx": "^4.0.5",
+    "@astrojs/react": "^4.1.2",
+    "@astrojs/sitemap": "^3.2.1",
+    "@types/react": "^18.3.17",
+    "@types/react-dom": "^18.3.5",
+    "astro": "^5.1.1",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.7.2",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241218.0",
+    "prettier": "^3.4.2",
+    "prettier-plugin-astro": "^0.14.1"
+  }
+}
