@@ -8,12 +8,14 @@
     "youtubeId": ""
   },
   "curated": [
-    { "event": "SmartCon (Chainlink)", "year": "2024", "title": "Lilypad architecture and deAI infrastructure", "href": "https://www.youtube.com/@DeveloperAlly" },
-    { "event": "ETH_AI Day",            "year": "2024", "title": "Distributed AI compute and verifiable inference", "href": "https://www.youtube.com/@DeveloperAlly" },
-    { "event": "DeSci London",          "year": "2024", "title": "Decentralised science and AI compute", "href": "https://www.youtube.com/@DeveloperAlly" },
-    { "event": "IPFS Camp",             "year": "2023", "title": "Decentralised compute and FVM integration", "href": "https://www.youtube.com/@DeveloperAlly" },
-    { "event": "ETHGlobal Workshop",    "year": "2023", "title": "AI Art NFTs on FEVM with Bacalhau + SDXL", "href": "https://www.youtube.com/@DeveloperAlly" },
-    { "event": "APIdays Jakarta",       "year": "2021", "title": "Cloud Native and OpenShift", "href": "https://www.youtube.com/@DeveloperAlly" }
+    { "event": "SmartCon Barcelona (Chainlink)", "year": "2023", "title": "Keynote: Lilypad and deAI infrastructure",            "href": "https://www.youtube.com/watch?v=yQnB2Yxia4Y", "youtubeId": "yQnB2Yxia4Y" },
+    { "event": "Filecoin Unleashed Paris",       "year": "2023", "title": "Keynote: decentralised compute on Filecoin",          "href": "https://www.youtube.com/watch?v=4GgM1jY4wOw", "youtubeId": "4GgM1jY4wOw" },
+    { "event": "SmartCon (Chainlink)",           "year": "2024", "title": "Lilypad architecture and deAI infrastructure",         "href": "https://www.youtube.com/@DeveloperAlly" },
+    { "event": "ETH_AI Day",                     "year": "2024", "title": "Distributed AI compute and verifiable inference",      "href": "https://www.youtube.com/@DeveloperAlly" },
+    { "event": "DeSci London",                   "year": "2024", "title": "Decentralised science and AI compute",                 "href": "https://www.youtube.com/@DeveloperAlly" },
+    { "event": "IPFS Camp",                      "year": "2023", "title": "Decentralised compute and FVM integration",            "href": "https://www.youtube.com/@DeveloperAlly" },
+    { "event": "ETHGlobal Workshop",             "year": "2023", "title": "AI Art NFTs on FEVM with Bacalhau + SDXL",              "href": "https://www.youtube.com/@DeveloperAlly" },
+    { "event": "APIdays Jakarta",                "year": "2021", "title": "Cloud Native and OpenShift",                            "href": "https://www.youtube.com/@DeveloperAlly" }
   ],
   "autoFetchLimit": 8
 }
